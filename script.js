@@ -19,7 +19,19 @@ const observer = new IntersectionObserver(
 
 observer.observe(skillsSection);
 
+// NAVBAR HIDE ON SCROLL PAST HERO
+const navbar = document.querySelector('.custom-navbar');
+const heroSection = document.querySelector('#home'); // make sure your hero has id="home"
 
+window.addEventListener('scroll', () => {
+    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+    
+    if (window.scrollY > heroBottom) {
+        navbar.classList.add('navbar-hidden');
+    } else {
+        navbar.classList.remove('navbar-hidden');
+    }
+});
 
 
 const canvas = document.getElementById('bg-canvas');
