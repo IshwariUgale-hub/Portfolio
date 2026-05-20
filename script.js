@@ -58,6 +58,46 @@ function draw() {
 draw();
 
 
+// =========================
+// HERO IMAGE 3D EFFECT
+// =========================
+
+const heroImage = document.querySelector(".hero-image-wrapper");
+
+heroImage.addEventListener("mousemove", (e) => {
+
+    const rect = heroImage.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = ((y - centerY) / 20) * -1;
+    const rotateY = (x - centerX) / 20;
+
+    heroImage.style.transform = `
+        perspective(1000px)
+        rotateX(${rotateX}deg)
+        rotateY(${rotateY}deg)
+        scale(1.03)
+    `;
+
+});
+
+heroImage.addEventListener("mouseleave", () => {
+
+    heroImage.style.transform = `
+        perspective(1000px)
+        rotateX(0deg)
+        rotateY(0deg)
+        scale(1)
+    `;
+
+});
+
+
 
 // About section scroll-reveal
 document.addEventListener('DOMContentLoaded', () => {
@@ -85,3 +125,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
  
+// =========================
+// SKILL CARD ANIMATION
+// =========================
+
+const skillCards = document.querySelectorAll(".skill-card");
+
+skillCards.forEach((card) => {
+
+    card.addEventListener("mousemove", (e) => {
+
+        const rect = card.getBoundingClientRect();
+
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = ((y - centerY) / 18) * -1;
+        const rotateY = (x - centerX) / 18;
+
+        card.style.transform =
+            `perspective(1000px)
+             rotateX(${rotateX}deg)
+             rotateY(${rotateY}deg)
+             translateY(-6px)`;
+
+    });
+
+    card.addEventListener("mouseleave", () => {
+
+        card.style.transform =
+            "perspective(1000px) rotateX(0) rotateY(0) translateY(0)";
+
+    });
+
+});
