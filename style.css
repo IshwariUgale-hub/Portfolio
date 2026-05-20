@@ -150,6 +150,17 @@ body.light-theme .page-background{
   100% { background-position: 200% 50%; }
 }
 
+
+.custom-navbar {
+    transition: all 0.4s ease, transform 0.4s ease, opacity 0.4s ease; /* add transform + opacity */
+}
+
+.navbar-hidden {
+    transform: translateY(-120%);
+    opacity: 0;
+    pointer-events: none; /* disables clicks when hidden */
+}
+
 /* ============================================
    HERO SECTION
 ============================================ */
