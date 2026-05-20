@@ -472,7 +472,7 @@ body {
 }
 
 .about-bio-text {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: #cbd5e1;
   line-height: 1.8;
   margin-bottom: 8px;
@@ -497,11 +497,11 @@ body {
 
 .drive-label {
   display: block;
-  font-size: 0.68rem;
+  font-size: 2rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #bb9efd;
+  color: #eae5f6;
   margin-bottom: 10px;
   font-style: normal;
 }
@@ -512,6 +512,7 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .fact-card {
