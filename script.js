@@ -60,29 +60,28 @@ draw();
 
 
 // About section scroll-reveal
-
 document.addEventListener('DOMContentLoaded', () => {
- 
-  /* ── Scroll-reveal ── */
-  const revealEls = document.querySelectorAll('.about-card, .h-timeline-item');
- 
+
+  /* Scroll-reveal — all animated elements */
+  const revealEls = document.querySelectorAll(
+    '.about-card, .h-timeline-item, .about-card-reveal'
+  );
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
+      if (entry.isIntersecting) entry.target.classList.add('visible');
     });
   }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
- 
+
   revealEls.forEach(el => observer.observe(el));
- 
-  /* ── Horizontal timeline click → active ── */
+
+  /* Timeline click → active state (mobile tap) */
   document.querySelectorAll('.h-timeline-item').forEach(item => {
     item.addEventListener('click', () => {
       document.querySelectorAll('.h-timeline-item').forEach(i => i.classList.remove('active'));
       item.classList.add('active');
     });
   });
- 
+
 });
  
