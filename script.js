@@ -63,8 +63,8 @@ draw();
 
 document.addEventListener('DOMContentLoaded', () => {
  
-  /* ── Scroll-reveal: About cards + timeline items ── */
-  const revealEls = document.querySelectorAll('.timeline-item, .about-card');
+  /* ── Scroll-reveal ── */
+  const revealEls = document.querySelectorAll('.about-card, .h-timeline-item');
  
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -72,16 +72,17 @@ document.addEventListener('DOMContentLoaded', () => {
         entry.target.classList.add('visible');
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
  
   revealEls.forEach(el => observer.observe(el));
  
-  /* ── Timeline click → active state (for mobile tap) ── */
-  document.querySelectorAll('.timeline-item').forEach(item => {
+  /* ── Horizontal timeline click → active ── */
+  document.querySelectorAll('.h-timeline-item').forEach(item => {
     item.addEventListener('click', () => {
-      document.querySelectorAll('.timeline-item').forEach(i => i.classList.remove('active'));
+      document.querySelectorAll('.h-timeline-item').forEach(i => i.classList.remove('active'));
       item.classList.add('active');
     });
   });
  
 });
+ 
