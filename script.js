@@ -1,3 +1,26 @@
+// Replace the scroll listener with this for smoother, more reliable triggering
+const skillsSection = document.querySelector(".skills-section");
+
+const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                document.body.classList.add("light-theme");
+            } else {
+                document.body.classList.remove("light-theme");
+            }
+        });
+    },
+    {
+        threshold: 0.15, // triggers when 15% of the section is visible
+        rootMargin: "0px 0px -50px 0px"
+    }
+);
+
+observer.observe(skillsSection);
+
+
+
 
 const canvas = document.getElementById('bg-canvas');
 const ctx = canvas.getContext('2d');

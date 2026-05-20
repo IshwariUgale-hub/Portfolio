@@ -13,6 +13,8 @@ body {
   background: radial-gradient(circle at 30% 50%, #0d0d1a, #000);
   padding-top: 80px;
   overflow-x: hidden;
+  transition:background 0.8s ease;
+    overflow-x:hidden;
 }
 
 /* Cursor canvas — behind everything */
@@ -22,6 +24,68 @@ body {
   pointer-events: none;
   z-index: 0;
 }
+
+
+
+/* =========================
+   BODY
+========================= */
+
+
+
+/* =========================
+   GLOBAL BG LAYER
+========================= */
+
+.page-background {
+    position: fixed;
+    inset: 0;
+    z-index: -10;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1.2s ease;
+    background: linear-gradient(
+        to bottom,
+        #ffffff 0%,
+        #f5f7ff 40%,
+        #eef1ff 70%,
+        #ffffff 100%
+    );
+}
+
+body.light-theme .page-background {
+    opacity: 1;
+}
+
+/* =========================
+   WHEN LIGHT MODE ACTIVE
+========================= */
+
+body.light-theme .page-background{
+
+    opacity:1;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #ffffff 0%,
+        #f5f7ff 20%,
+        #eef1ff 50%,
+        #ffffff 100%
+    );
+}
+
+/* =========================
+   SKILLS SECTION
+========================= */
+
+.light-section{
+    position:relative;
+    z-index:2;
+}
+
+
+
 
 /* ============================================
    NAVBAR
@@ -1069,9 +1133,9 @@ body {
     display:inline-block;
     padding:8px 18px;
     border-radius:50px;
-    border:1px solid rgba(187,158,253,0.25);
+    border:1px solid rgba(176, 154, 227, 0.25);
     background:rgba(187,158,253,0.08);
-    color:#bb9efd;
+    color:#0f0e0f;
     font-size:13px;
     font-weight:700;
     letter-spacing:2px;
@@ -1080,12 +1144,12 @@ body {
 
 .skills-title{
     font-size:55px;
-    color:#fff;
+    color:#0d0b34;
     font-weight:800;
 }
 
 .skills-title span{
-    background:linear-gradient(90deg,#fff,#bb9efd);
+    background:linear-gradient(90deg,#1c1648,#bbb4cc);
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
@@ -1130,11 +1194,11 @@ body {
 .skill-card:hover{
     transform:translateY(-10px);
 
-    border-color:rgba(187,158,253,0.35);
+    border-color:rgba(161, 66, 63, 0.35);
 
     box-shadow:
-    0 0 40px rgba(187,158,253,0.15),
-    0 0 80px rgba(187,158,253,0.08);
+    0 0 40px rgba(23, 17, 43, 0.514),
+    0 0 80px rgba(15, 14, 16, 0.08);
 }
 
 
@@ -1158,7 +1222,7 @@ body {
 
     background:radial-gradient(
         circle,
-        rgba(187,158,253,0.20) 0%,
+        rgba(105, 80, 150, 0.829) 0%,
         transparent 70%
     );
 
@@ -1187,25 +1251,25 @@ body {
 
     border-radius:20px;
 
-    background:rgba(187,158,253,0.08);
+    background:rgba(187, 158, 253, 0.1);
 
     border:1px solid rgba(187,158,253,0.25);
 
     margin-bottom:24px;
 
-    color:#bb9efd;
+    color:#080709;
     font-size:30px;
 }
 
 .skill-card h3{
-    color:#fff;
+    color:#160335;
     font-size:30px;
     margin-bottom:14px;
     font-weight:700;
 }
 
 .skill-card p{
-    color:#cbd5e1;
+    color:#102034;
     line-height:1.8;
     font-size:15px;
     max-width:500px;
@@ -1235,7 +1299,7 @@ body {
 
     border-radius:14px;
 
-    background:rgba(87, 89, 92, 0.834);
+    background:rgba(65, 43, 91, 0.834);
 
     border:1px solid rgba(255,255,255,0.08);
 
@@ -1245,9 +1309,9 @@ body {
 .skill-pill:hover{
     transform:translateY(-4px);
 
-    background:rgba(187,158,253,0.10);
+    background:rgba(219, 215, 226, 0.951);
 
-    border-color:rgba(187,158,253,0.30);
+    border-color:rgba(18, 15, 27, 0.3);
 }
 
 .skill-pill i{
@@ -1255,9 +1319,13 @@ body {
 }
 
 .skill-pill span{
-    color:#fff;
+    color:#f4f0fa;
     font-size:14px;
     font-weight:600;
+}
+
+.skill-pill:hover span {
+    color: #0f0f1a;  /* add this new rule */
 }
 
 .soft-skill-card{
