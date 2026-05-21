@@ -1672,5 +1672,9 @@ body.light-theme .page-background{
   .card-meta {
     display: flex;
     align-items: center;
+    
+    
     justify-content: space-between;
   }
+
+  
