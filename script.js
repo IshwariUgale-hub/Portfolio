@@ -197,3 +197,14 @@ skillCards.forEach((card) => {
     });
 
 });
+
+
+// Project section
+ function filterProjects(btn) {
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+ 
+    const cards = document.querySelectorAll('.card[data-cat]');
+    let visible = 0;
+ 
