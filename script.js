@@ -207,4 +207,16 @@ skillCards.forEach((card) => {
  
     const cards = document.querySelectorAll('.card[data-cat]');
     let visible = 0;
+
+    cards.forEach((card, i) => {
+      const match = filter === 'all' || card.dataset.cat === filter;
+      card.classList.toggle('hidden', !match);
+      if (match) {
+        visible++;
+        card.style.animationDelay = (visible * 0.07) + 's';
+        card.style.animation = 'none';
+        void card.offsetWidth;
+        card.style.animation = '';
+      }
+    });
  
