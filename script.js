@@ -207,7 +207,7 @@ skillCards.forEach((card) => {
  
     const cards = document.querySelectorAll('.card[data-cat]');
     let visible = 0;
-
+ 
     cards.forEach((card, i) => {
       const match = filter === 'all' || card.dataset.cat === filter;
       card.classList.toggle('hidden', !match);
@@ -219,4 +219,8 @@ skillCards.forEach((card) => {
         card.style.animation = '';
       }
     });
+ 
+    document.getElementById('visible-count').textContent = visible;
+    document.getElementById('empty').classList.toggle('show', visible === 0);
+  }
  
